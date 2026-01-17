@@ -1,14 +1,53 @@
 :root {
+  /* Colors */
   --primary-color: #6366f1;
   --secondary-color: #10b981;
   --accent-color: #f59e0b;
+  --text-color: white;
+  --text-secondary: #cbd5e1;
   --background-color: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
   --card-background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
   --border-color: rgba(255, 255, 255, 0.1);
   --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --glow: 0 0 10px rgba(99, 102, 241, 0.2);
+
+  /* Typography */
   --font-family: 'Inter', sans-serif;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 2rem;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+
+  /* Borders */
+  --border-radius-sm: 0.25rem;
+  --border-radius-md: 0.5rem;
+  --border-radius-lg: 0.75rem;
+  --border-radius-xl: 1rem;
+  --border-width: 1px;
+  --border-width-thick: 2px;
+
+  /* Transitions */
   --transition: all 0.3s ease;
+  --transition-fast: all 0.15s ease;
+  --transition-slow: all 0.5s ease;
+
+  /* Z-index */
+  --z-index-base: 1;
+  --z-index-overlay: 10;
+  --z-index-modal: 100;
 }
 
 * {
