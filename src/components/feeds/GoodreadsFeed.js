@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../Feed.css';
+import { truncateText } from '../../utils/formatters';
 
 function GoodreadsFeed() {
   const [reviews, setReviews] = useState([]);
@@ -59,7 +60,7 @@ function GoodreadsFeed() {
                 </a>
               )}
               <div className="goodreads-content">
-                <a href={review.book_url} target="_blank" rel="noopener noreferrer" className="goodreads-title">{review.title}</a><br />AUTHOR: {review.author}, RATING: {review.rating}/5, REVIEWED @ {new Date(review.review_date).toLocaleString()}
+                <a href={review.book_url} target="_blank" rel="noopener noreferrer" className="goodreads-title" title={review.title}>{truncateText(review.title, 30)}</a><br />AUTHOR: {review.author}, RATING: {review.rating}/5, REVIEWED @ {new Date(review.review_date).toLocaleString()}
               </div>
             </div>
           ))}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../Feed.css';
+import { truncateText } from '../../utils/formatters';
 
 function SteamFeed() {
   const [games, setGames] = useState([]);
@@ -59,7 +60,7 @@ function SteamFeed() {
                 </a>
               )}
               <div className="game-info">
-                <a href={`https://store.steampowered.com/app/${game.appid}`} target="_blank" rel="noopener noreferrer" className="game-title">{game.name}</a><br />2W PLAYTIME: {Math.floor(game.playtime_2weeks / 60)}h {game.playtime_2weeks % 60}m, TOTAL: {Math.floor(game.playtime_forever / 60)}h {game.playtime_forever % 60}m
+                <a href={`https://store.steampowered.com/app/${game.appid}`} target="_blank" rel="noopener noreferrer" className="game-title" title={game.name}>{truncateText(game.name, 25)}</a><br />2W PLAYTIME: {Math.floor(game.playtime_2weeks / 60)}h {game.playtime_2weeks % 60}m, TOTAL: {Math.floor(game.playtime_forever / 60)}h {game.playtime_forever % 60}m
               </div>
             </div>
           ))}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../Feed.css';
+import { truncateText } from '../../utils/formatters';
 
 function MALCombinedFeed() {
   const [anime, setAnime] = useState([]);
@@ -65,7 +66,7 @@ function MALCombinedFeed() {
                     <img src={item.image_url} alt={item.title} className="mal-image" />
                   </a>
                   <div className="mal-content">
-                    <a href={item.url} target="_blank" rel="noopener noreferrer" className="mal-title">{item.title}</a>
+                    <a href={item.url} target="_blank" rel="noopener noreferrer" className="mal-title" title={item.title}>{truncateText(item.title, 25)}</a>
                     <br />
                     STATUS={item.status}, SCORE={item.score}, UPDATED @ {new Date(item.updated_at).toLocaleString()}
                   </div>
@@ -86,7 +87,7 @@ function MALCombinedFeed() {
                     <img src={item.image_url} alt={item.title} className="manga-image" />
                   </a>
                   <div className="manga-content">
-                    <a href={item.url} target="_blank" rel="noopener noreferrer" className="manga-title">{item.title}</a>
+                    <a href={item.url} target="_blank" rel="noopener noreferrer" className="manga-title" title={item.title}>{truncateText(item.title, 25)}</a>
                     <br />
                     STATUS={item.status}, SCORE={item.score}, UPDATED @ {new Date(item.updated_at).toLocaleString()}
                   </div>
