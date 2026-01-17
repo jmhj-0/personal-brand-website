@@ -16,7 +16,7 @@ function Header({ isLanding = false }) {
         <img src="/White Background.png" alt="Profile" className="profile-image" />
         <div>
           <h1>ジョセフ　（ＪＭＨＪ)</h1>
-          <p>Developer | Future Funk Conoisseur | AI Enthusiast</p>
+          <p>Developer | SQL Guru | AI Enthusiast</p>
         </div>
       </div>
       <nav>
