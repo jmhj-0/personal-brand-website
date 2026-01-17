@@ -214,6 +214,16 @@
   transform: scale(1.02);
 }
 
+.email-link {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.email-link:hover {
+  color: var(--primary-color);
+}
+
 .email-icon {
   width: 20px;
   height: 20px;

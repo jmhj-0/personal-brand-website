@@ -45,7 +45,7 @@ function Header({ isLanding = false }) {
       </div>
       {isLanding && (
         <div className="contact-info">
-          <p>joseph@jmhj.io <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@v9/icons/microsoftoutlook.svg" alt="Email" className="email-icon" /></p>
+          <p><a href="mailto:joseph@jmhj.io" className="email-link">joseph@jmhj.io</a> <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@v9/icons/microsoftoutlook.svg" alt="Email" className="email-icon" /></p>
         </div>
       )}
     </header>
