@@ -1,3 +1,4 @@
+/* CSS Custom Properties */
 :root {
   /* Colors */
   --primary-color: #6366f1;
@@ -50,6 +51,7 @@
   --z-index-modal: 100;
 }
 
+/* Global Styles */
 * {
   box-sizing: border-box;
 }
@@ -73,6 +75,7 @@ main {
   padding: 20px;
 }
 
+/* Background Effects */
 .bg-effects {
   position: fixed;
   top: 0;
@@ -93,6 +96,7 @@ main {
   will-change: transform;
 }
 
+/* Animations */
 @keyframes float {
   0% {
     transform: translateY(0px) rotate(0deg) scale(1);
