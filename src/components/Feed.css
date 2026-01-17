@@ -72,6 +72,7 @@
 
 .item-hover {
   transition: var(--transition);
+  will-change: transform, box-shadow;
 }
 
 .item-hover:hover {
