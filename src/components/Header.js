@@ -48,6 +48,14 @@ function Header({ isLanding = false }) {
           <p><a href="mailto:joseph@jmhj.io" className="email-link">joseph@jmhj.io</a> <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@v9/icons/microsoftoutlook.svg" alt="Email" className="email-icon" /></p>
         </div>
       )}
+      {isLanding && (
+        <div className="motto">
+          <blockquote>
+            "Science is what we understand well enough to explain to a computer; art is everything else."
+            <cite>— Donald E. Knuth</cite>
+          </blockquote>
+        </div>
+      )}
     </header>
     </>
   );
