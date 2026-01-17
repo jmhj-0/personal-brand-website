@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
-import TwitterFeed from './feeds/TwitterFeed';
-import MALCombinedFeed from './feeds/MALCombinedFeed';
-import GoodreadsFeed from './feeds/GoodreadsFeed';
-import SteamFeed from './feeds/SteamFeed';
+import React, { useState, Suspense } from 'react';
 import './FeedSection.css';
+
+const TwitterFeed = React.lazy(() => import('./feeds/TwitterFeed'));
+const MALCombinedFeed = React.lazy(() => import('./feeds/MALCombinedFeed'));
+const GoodreadsFeed = React.lazy(() => import('./feeds/GoodreadsFeed'));
+const SteamFeed = React.lazy(() => import('./feeds/SteamFeed'));
 
 const feedTypes = [
   { id: 'twitter', name: 'X Posts', component: TwitterFeed, wrapper: 'twitter-wrapper' },
@@ -55,7 +56,11 @@ function FeedSection() {
                     {collapsedFeeds.has(feed.id) ? '+' : '-'}
                   </button>
                 </div>
-                {!collapsedFeeds.has(feed.id) && <FeedComponent />}
+                {!collapsedFeeds.has(feed.id) && (
+                  <Suspense fallback={<div className="feed-card"><p>Loading {feed.name}...</p></div>}>
+                    <FeedComponent />
+                  </Suspense>
+                )}
               </div>
             );
           })}
