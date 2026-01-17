@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Header from './components/Header';
 import FeedSection from './components/FeedSection';
+import ErrorBoundary from './components/ErrorBoundary';
 
 function App() {
   return (
@@ -14,7 +15,9 @@ function App() {
       </div>
       <Header />
       <main>
-        <FeedSection />
+        <ErrorBoundary>
+          <FeedSection />
+        </ErrorBoundary>
       </main>
     </div>
   );
