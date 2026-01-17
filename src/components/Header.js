@@ -1,9 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { useTheme } from '../contexts/ThemeContext';
 import './Header.css';
 
-function Header() {
+function Header({ isLanding = false }) {
+  const { isDark, toggleTheme } = useTheme();
+
   return (
-    <header className="header">
+    <>
+      <button onClick={toggleTheme} className="theme-toggle-fixed" aria-label="Toggle theme">
+        {isDark ? '☀️' : '🌙'}
+      </button>
+      <header className={`header ${isLanding ? 'landing-header' : ''}`}>
       <div className="header-content">
         <img src="/White Background.png" alt="Profile" className="profile-image" />
         <div>
@@ -11,6 +19,10 @@ function Header() {
           <p>Developer | Future Funk Conoisseur | AI Enthusiast</p>
         </div>
       </div>
+      <nav>
+        <Link to="/" className="nav-link">Home</Link>
+        <Link to="/social-feeds" className="nav-link">Social Feeds</Link>
+      </nav>
       <div className="social-links">
         <a href="https://x.com/_jmhj" target="_blank" rel="noopener noreferrer">
           <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@v9/icons/x.svg" alt="X/Twitter" />
@@ -31,7 +43,13 @@ function Header() {
           <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@v9/icons/steam.svg" alt="Steam" />
         </a>
       </div>
+      {isLanding && (
+        <div className="contact-info">
+          <p>joseph@jmhj.io <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@v9/icons/microsoftoutlook.svg" alt="Email" className="email-icon" /></p>
+        </div>
+      )}
     </header>
+    </>
   );
 }
 

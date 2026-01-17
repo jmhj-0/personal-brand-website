@@ -1,25 +1,24 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { SwitchTransition, CSSTransition } from 'react-transition-group';
 import './App.css';
-import Header from './components/Header';
-import FeedSection from './components/FeedSection';
-import ErrorBoundary from './components/ErrorBoundary';
+import LandingPage from './components/LandingPage';
+const SocialFeedsPage = lazy(() => import('./components/SocialFeedsPage'));
 
 function App() {
+  const location = useLocation();
+
   return (
-    <div className="App">
-      <div className="bg-effects">
-        <div className="bg-shape"></div>
-        <div className="bg-shape"></div>
-        <div className="bg-shape"></div>
-        <div className="bg-shape"></div>
-      </div>
-      <Header />
-      <main>
-        <ErrorBoundary>
-          <FeedSection />
-        </ErrorBoundary>
-      </main>
-    </div>
+    <SwitchTransition>
+      <CSSTransition key={location.pathname} classNames="page" timeout={300}>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Routes location={location}>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/social-feeds" element={<SocialFeedsPage />} />
+          </Routes>
+        </Suspense>
+      </CSSTransition>
+    </SwitchTransition>
   );
 }
 

@@ -130,6 +130,13 @@
 
 .feed-header h3 {
   margin: 0;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.feed-header h3 {
+  margin: 0;
   color: white;
   font-size: 1.2rem;
   padding-left: 15px;
@@ -179,12 +186,12 @@
 }
 
 .twitter-wrapper .feed-card {
-  border-color: rgba(99, 102, 241, 0.3);
-  box-shadow: 0 0 10px rgba(99, 102, 241, 0.2);
+  border-color: rgba(124, 58, 237, 0.3);
+  box-shadow: var(--glow);
 }
 
 .twitter-wrapper .feed-card:hover {
-  box-shadow: 0 0 15px rgba(99, 102, 241, 0.3);
+  box-shadow: var(--glow-hover);
 }
 
 .mal-wrapper .feed-card {
@@ -231,6 +238,21 @@
   }
 }
 
+.feeds-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .feeds-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
 @media (max-width: 480px) {
   .feed-section {
     padding: 30px 0;
@@ -239,16 +261,5 @@
   .feed-section h2 {
     font-size: 1.5rem;
     margin-bottom: 20px;
-  }
-
-  .control-btn {
-    padding: 6px 12px;
-    font-size: 0.8rem;
-  }
-
-  .carousel-arrow {
-    width: 40px;
-    height: 40px;
-    font-size: 1.5rem;
   }
 }

@@ -30,28 +30,17 @@ function FeedSection() {
 
   return (
     <section id="feeds" className="feed-section">
-      <div className="feed-controls">
-        <div className="filter-buttons">
-          {feedTypes.map(feed => (
-            <button
-              key={feed.id}
-              onClick={() => document.getElementById(feed.id)?.scrollIntoView({ behavior: 'smooth' })}
-              className="control-btn"
-            >
-              {feed.name}
-            </button>
-          ))}
-        </div>
-      </div>
-      <div className="feeds-grid">
+      <div className="feeds-container">
         {feedTypes.map(feed => {
             const FeedComponent = feed.component;
             return (
-              <div key={feed.id} id={feed.id} className={`feed-wrapper ${feed.wrapper} ${collapsedFeeds.has(feed.id) ? 'collapsed' : ''}`}>
+              <div key={feed.id} className={`feed-wrapper ${feed.wrapper} ${collapsedFeeds.has(feed.id) ? 'collapsed' : ''}`}>
                 <div className="feed-header">
+                  <h3>{feed.name}</h3>
                   <button
                     className="collapse-btn"
                     onClick={() => toggleFeedCollapse(feed.id)}
+                    aria-label={collapsedFeeds.has(feed.id) ? `Expand ${feed.name}` : `Collapse ${feed.name}`}
                   >
                     {collapsedFeeds.has(feed.id) ? '+' : '-'}
                   </button>

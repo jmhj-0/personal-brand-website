@@ -65,7 +65,6 @@ function TwitterFeed() {
 
   return (
     <div className="feed-card">
-      <h3>X</h3>
       {tweets.length === 0 ? (
         <p>No posts available.</p>
       ) : (

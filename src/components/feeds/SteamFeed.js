@@ -47,7 +47,6 @@ function SteamFeed() {
 
   return (
     <div className="feed-card">
-      <h3>Steam Recently Played</h3>
       {games.length === 0 ? (
         <p>No recent games.</p>
       ) : (

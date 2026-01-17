@@ -47,7 +47,6 @@ function GoodreadsFeed() {
 
   return (
     <div className="feed-card">
-      <h3>Goodreads</h3>
       {reviews.length === 0 ? (
         <p>No recent reviews.</p>
       ) : (

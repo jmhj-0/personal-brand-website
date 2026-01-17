@@ -10,27 +10,9 @@
   overflow-y: auto;
 }
 
-.feed-card::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--accent-color));
-  border-radius: 18px;
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.4s;
-}
-
 .feed-card:hover {
-  transform: translateY(-4px) scale(1.02);
+  transform: translateY(-2px) scale(1.01);
   box-shadow: var(--glow);
-}
-
-.feed-card:hover::before {
-  opacity: 1;
 }
 
 .feed-card h3 {
@@ -76,7 +58,7 @@
 }
 
 .item-hover:hover {
-  transform: translateY(-4px);
+  transform: translateY(-2px);
   box-shadow: var(--glow);
 }
 
@@ -100,7 +82,7 @@
 }
 
 .anime-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-2px);
   box-shadow: var(--glow);
 }
 
@@ -150,7 +132,7 @@
 }
 
 .book-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-2px);
   box-shadow: var(--glow);
 }
 
@@ -209,8 +191,8 @@
 }
 
 .game-item:hover {
-  background: rgba(255, 255, 255, 0.1);
-  transform: translateX(4px);
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateX(2px);
 }
 
 .game-icon {
@@ -258,8 +240,8 @@
 }
 
 .tweet-item:hover {
-  background: rgba(255, 255, 255, 0.1);
-  transform: translateX(4px);
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateX(2px);
 }
 
 .tweet-text {
@@ -315,8 +297,8 @@
 }
 
 .mal-item:hover {
-  background: rgba(255, 255, 255, 0.1);
-  transform: translateX(4px);
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateX(2px);
 }
 
 .mal-image {
@@ -350,8 +332,8 @@
 }
 
 .goodreads-item:hover {
-  background: rgba(255, 255, 255, 0.1);
-  transform: translateX(4px);
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateX(2px);
 }
 
 .goodreads-image {
@@ -385,8 +367,8 @@
 }
 
 .manga-item:hover {
-  background: rgba(255, 255, 255, 0.1);
-  transform: translateX(4px);
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateX(2px);
 }
 
 .manga-image {
