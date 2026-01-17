@@ -67,7 +67,16 @@
 }
 
 .feed-card a:hover {
-  color: #007bff;
+  color: var(--primary-color);
+}
+
+.item-hover {
+  transition: var(--transition);
+}
+
+.item-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--glow);
 }
 
 .feed-card img {
