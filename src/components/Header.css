@@ -330,4 +330,18 @@
     width: 32px;
     height: 32px;
   }
+
+  .motto {
+    margin-top: 20px;
+    max-width: 90vw;
+  }
+
+  .motto blockquote {
+    padding: 15px;
+    font-size: var(--font-size-base);
+  }
+
+  .motto cite {
+    font-size: 0.9rem;
+  }
 }
