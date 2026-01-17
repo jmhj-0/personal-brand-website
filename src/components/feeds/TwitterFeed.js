@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../Feed.css';
+import { formatDate, formatNumber } from '../../utils/formatters';
+import FeedLoading from '../common/FeedLoading';
+import FeedError from '../common/FeedError';
 
 function TwitterFeed() {
   const [tweets, setTweets] = useState([]);
@@ -38,21 +41,11 @@ function TwitterFeed() {
   }, []);
 
   if (loading) {
-    return (
-      <div className="feed-card">
-        <h3>X (Twitter) Posts</h3>
-        <p>Loading latest posts...</p>
-      </div>
-    );
+    return <FeedLoading message="Loading latest posts..." />;
   }
 
   if (error) {
-    return (
-      <div className="feed-card">
-        <h3>X (Twitter) Posts</h3>
-        <p>Error: {error}</p>
-      </div>
-    );
+    return <FeedError error={error} onRetry={() => window.location.reload()} />;
   }
 
   if (!user) {
@@ -74,11 +67,11 @@ function TwitterFeed() {
               <img src={user.profile_image_url} alt="Profile" className="tweet-profile-pic" />
               <div className="tweet-content">
                 <p className="tweet-text">{renderTweetText(tweet.text)}</p>
-                <small className="tweet-date">{new Date(tweet.created_at).toLocaleString()}</small>
+                <small className="tweet-date">{formatDate(tweet.created_at)}</small>
                 <div className="tweet-metrics">
-                  <span>👍 {tweet.public_metrics?.like_count || 0}</span>
-                  <span>🔄 {tweet.public_metrics?.retweet_count || 0}</span>
-                  <span>👁️ {tweet.public_metrics?.impression_count || 0}</span>
+                  <span>👍 {formatNumber(tweet.public_metrics?.like_count || 0)}</span>
+                  <span>🔄 {formatNumber(tweet.public_metrics?.retweet_count || 0)}</span>
+                  <span>👁️ {formatNumber(tweet.public_metrics?.impression_count || 0)}</span>
                 </div>
               </div>
             </div>

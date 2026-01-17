@@ -419,3 +419,60 @@
   overflow: hidden;
   display: inline-block;
 }
+
+/* Loading and Error States */
+.feed-loading .loading-skeleton {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.skeleton-line {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.skeleton-title {
+  height: 24px;
+  width: 60%;
+}
+
+.skeleton-text {
+  height: 16px;
+  width: 100%;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.feed-error .error-content {
+  text-align: center;
+  padding: 20px;
+}
+
+.feed-error .error-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.feed-error h3 {
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.retry-btn {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 10px;
+}
+
+.retry-btn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
