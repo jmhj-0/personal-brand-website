@@ -67,3 +67,27 @@ main {
     opacity: 0.3;
   }
 }
+
+.bg-shape:nth-child(1) {
+  left: 5%;
+  top: 10%;
+  animation-delay: 0s;
+}
+
+.bg-shape:nth-child(2) {
+  right: 10%;
+  top: 30%;
+  animation-delay: 2s;
+}
+
+.bg-shape:nth-child(3) {
+  left: 15%;
+  bottom: 20%;
+  animation-delay: 4s;
+}
+
+.bg-shape:nth-child(4) {
+  right: 5%;
+  bottom: 10%;
+  animation-delay: 1s;
+}

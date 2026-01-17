@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import TwitterFeed from './TwitterFeed';
-import MALCombinedFeed from './MALCombinedFeed';
-import GoodreadsFeed from './GoodreadsFeed';
-import SteamFeed from './SteamFeed';
+import TwitterFeed from './feeds/TwitterFeed';
+import MALCombinedFeed from './feeds/MALCombinedFeed';
+import GoodreadsFeed from './feeds/GoodreadsFeed';
+import SteamFeed from './feeds/SteamFeed';
 import './FeedSection.css';
 
 const feedTypes = [
