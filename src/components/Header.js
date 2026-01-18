@@ -1,10 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useTheme } from '../contexts/ThemeContext';
 import './Header.css';
 
 function Header({ isLanding = false }) {
   const { isDark, toggleTheme } = useTheme();
+  const [displayedName, setDisplayedName] = useState('');
+  const fullName = 'ジョセフ　（ＪＭＨＪ)';
+
+  useEffect(() => {
+    if (isLanding) {
+      let i = 0;
+      const timer = setInterval(() => {
+        if (i < fullName.length) {
+          setDisplayedName(fullName.slice(0, i + 1));
+          i++;
+        } else {
+          clearInterval(timer);
+        }
+      }, 100);
+      return () => clearInterval(timer);
+    } else {
+      setDisplayedName(fullName);
+    }
+  }, [isLanding]);
 
   return (
     <>
@@ -15,8 +34,8 @@ function Header({ isLanding = false }) {
       <div className="header-content">
         <img src="/White Background.png" alt="Profile" className="profile-image" />
         <div>
-          <h1>ジョセフ　（ＪＭＨＪ)</h1>
-          <p>Developer | SQL Guru | AI Enthusiast</p>
+          <h1>{displayedName}<span className="cursor">|</span></h1>
+          <p className={isLanding ? 'fade-in-delay' : ''}>Developer | SQL Guru | AI Enthusiast</p>
         </div>
       </div>
       <nav>

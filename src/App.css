@@ -11,8 +11,8 @@
   --accent-hover: #d97706;
   --accent-light: #fbbf24;
   --text-color: #ffffff;
-  --text-secondary: #cbd5e1;
-  --text-muted: #94a3b8;
+  --text-secondary: #d1d5db;
+  --text-muted: #9ca3af;
   --background-primary: #0f0a19;
   --background-secondary: #1e1b4b;
   --background-tertiary: #312e81;
@@ -84,6 +84,7 @@ body {
   line-height: var(--line-height-base);
   letter-spacing: var(--letter-spacing-normal);
   min-height: 100vh;
+  scroll-behavior: smooth;
 }
 
 .App {
@@ -186,8 +187,8 @@ main {
   --secondary-color: #10b981;
   --accent-color: #f59e0b;
   --text-color: #0f0a19;
-  --text-secondary: #1e1b4b;
-  --text-muted: #312e81;
+  --text-secondary: #374151;
+  --text-muted: #6b7280;
   --background-primary: #f9fafb;
   --background-secondary: #e5e7eb;
   --background-tertiary: #d1d5db;
@@ -225,8 +226,24 @@ main {
 }
 
 .project-card:hover {
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg), 0 0 20px rgba(124, 58, 237, 0.3);
+  transform: translateY(-2px) scale(1.02);
+  border-color: rgba(124, 58, 237, 0.5);
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.project-card:hover::before {
+  left: 100%;
 }
 
 .project-card h3 {
@@ -248,3 +265,4 @@ main {
   background: var(--primary-hover);
   box-shadow: var(--glow);
 }
+

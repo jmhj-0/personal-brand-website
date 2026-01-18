@@ -91,6 +91,15 @@
   margin-right: auto;
 }
 
+.cursor {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
 .header p {
   margin: 15px 0 30px;
   font-size: 1.3rem;
@@ -101,6 +110,21 @@
   position: relative;
   z-index: 1;
   white-space: nowrap;
+}
+
+.fade-in-delay {
+  animation: fadeInDelay 1s ease-out 2s both;
+}
+
+@keyframes fadeInDelay {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 0.9;
+    transform: translateY(0);
+  }
 }
 
 .header nav {
@@ -200,8 +224,17 @@
 }
 
 .social-links a:hover img {
-  transform: scale(1.1);
+  transform: scale(1.1) rotate(5deg);
   filter: brightness(1) invert(0); /* original color */
+  box-shadow: 0 0 15px rgba(124, 58, 237, 0.6);
+}
+
+.social-links a {
+  transition: transform 0.3s ease;
+}
+
+.social-links a:hover {
+  transform: translateY(-3px);
 }
 
 .contact-info {
