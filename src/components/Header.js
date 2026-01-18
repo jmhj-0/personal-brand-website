@@ -31,7 +31,7 @@ function Header({ isLanding = false }) {
         <a href="https://discordapp.com/users/365859129165742091" target="_blank" rel="noopener noreferrer">
           <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@v9/icons/discord.svg" alt="Discord" />
         </a>
-        <a href="https://www.goodreads.com/user/show/145364540-joseph-jensen" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.goodreads.com/user/show/145364540-jmhj" target="_blank" rel="noopener noreferrer">
           <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@v9/icons/goodreads.svg" alt="Goodreads" />
         </a>
         <a href="https://open.spotify.com/user/jensenj.mh" target="_blank" rel="noopener noreferrer">
