@@ -21,6 +21,13 @@ function ProjectsPage() {
               View Project
             </a>
           </div>
+          <div className="project-card">
+            <h3>PowerShell Data Automation Toolkit</h3>
+            <p>A comprehensive PowerShell toolkit for Windows system administration, featuring data export/analysis, GUI interface, and automated scheduling.</p>
+            <a href="https://github.com/jmhj-0/data-automation-toolkit" target="_blank" rel="noopener noreferrer" className="project-link">
+              View Project
+            </a>
+          </div>
         </div>
       </main>
     </div>
