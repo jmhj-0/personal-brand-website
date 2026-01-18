@@ -28,6 +28,13 @@ function ProjectsPage() {
               View Project
             </a>
           </div>
+          <div className="project-card">
+            <h3>SQL Query Performance Analyzer</h3>
+            <p>A web application for analyzing SQL query performance, providing optimization suggestions across multiple database dialects including MySQL, PostgreSQL, and SQL Server.</p>
+            <a href="https://web-production-03c63.up.railway.app/" target="_blank" rel="noopener noreferrer" className="project-link">
+              View Project
+            </a>
+          </div>
         </div>
       </main>
     </div>
