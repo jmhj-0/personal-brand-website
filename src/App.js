@@ -4,7 +4,6 @@ import { SwitchTransition, CSSTransition } from 'react-transition-group';
 import './App.css';
 import ScrollProgress from './components/ScrollProgress';
 import LandingPage from './components/LandingPage';
-const SocialFeedsPage = lazy(() => import('./components/SocialFeedsPage'));
 const ProjectsPage = lazy(() => import('./components/ProjectsPage'));
 
 function App() {
@@ -18,7 +17,6 @@ function App() {
           <Suspense fallback={<div>Loading...</div>}>
             <Routes location={location}>
               <Route path="/" element={<LandingPage />} />
-              <Route path="/social-feeds" element={<SocialFeedsPage />} />
               <Route path="/projects" element={<ProjectsPage />} />
             </Routes>
           </Suspense>
