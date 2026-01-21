@@ -19,11 +19,11 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: 'Invalid email format' });
     }
 
-    const resend = new Resend(process.env.RESEND_API_KEY);
-
     if (!process.env.RESEND_API_KEY) {
       throw new Error('RESEND_API_KEY is not configured');
     }
+
+    const resend = new Resend(process.env.RESEND_API_KEY);
 
     const emailData = {
       from: 'Contact Form <noreply@resend.dev>', // Use Resend's verified sender
