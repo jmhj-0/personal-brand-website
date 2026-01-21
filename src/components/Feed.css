@@ -431,24 +431,67 @@
 }
 
 /* Loading and Error States */
-.feed-loading .loading-skeleton {
-  animation: pulse 2s ease-in-out infinite;
+.feed-loading .loading-animation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  height: 80px;
 }
 
-.skeleton-line {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-  margin-bottom: 8px;
+.loading-shape {
+  width: 20px;
+  height: 20px;
+  animation: geometricPulse 2s ease-in-out infinite;
 }
 
-.skeleton-title {
-  height: 24px;
-  width: 60%;
+.loading-shape.shape-circle {
+  border-radius: 50%;
+  background: linear-gradient(45deg, #ff00ff, #00ffff);
+  animation-delay: 0s;
 }
 
-.skeleton-text {
-  height: 16px;
-  width: 100%;
+.loading-shape.shape-triangle {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 20px solid #ffff00;
+  background: none;
+  animation-delay: 0.5s;
+}
+
+.loading-shape.shape-square {
+  border-radius: 0;
+  background: linear-gradient(45deg, #ff0080, #8000ff);
+  animation-delay: 1s;
+}
+
+.loading-shape.shape-hexagon {
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(45deg, #00ff80, #ff8000);
+  clip-path: polygon(50% 0%, 93.3% 25%, 93.3% 75%, 50% 100%, 6.7% 75%, 6.7% 25%);
+  animation-delay: 1.5s;
+}
+
+@keyframes geometricPulse {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.7;
+  }
+  25% {
+    transform: scale(1.2) rotate(90deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.8) rotate(180deg);
+    opacity: 0.5;
+  }
+  75% {
+    transform: scale(1.1) rotate(270deg);
+    opacity: 0.8;
+  }
 }
 
 @keyframes pulse {

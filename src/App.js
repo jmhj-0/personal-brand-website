@@ -3,6 +3,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { SwitchTransition, CSSTransition } from 'react-transition-group';
 import './App.css';
 import ScrollProgress from './components/ScrollProgress';
+import CustomCursor from './components/CustomCursor';
 import LandingPage from './components/LandingPage';
 const ProjectsPage = lazy(() => import('./components/ProjectsPage'));
 const ContactPage = lazy(() => import('./components/ContactPage'));
@@ -12,6 +13,7 @@ function App() {
 
   return (
     <>
+      <CustomCursor />
       <ScrollProgress />
       <SwitchTransition>
         <CSSTransition key={location.pathname} classNames="page" timeout={300}>
