@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Header from './Header';
+import BackgroundEffects from './BackgroundEffects';
 
 function ContactPage() {
   const [formData, setFormData] = useState({
@@ -80,12 +81,7 @@ function ContactPage() {
 
   return (
     <div className="App">
-      <div className="bg-effects">
-        <div className="bg-shape"></div>
-        <div className="bg-shape"></div>
-        <div className="bg-shape"></div>
-        <div className="bg-shape"></div>
-      </div>
+      <BackgroundEffects />
       <Header />
       <main>
         <h2>Contact Me</h2>
