@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Header from './Header';
-import emailjs from '@emailjs/browser';
 
 function ContactPage() {
   const [formData, setFormData] = useState({
@@ -50,23 +49,27 @@ function ContactPage() {
     setSubmitMessage('');
 
     try {
-      // Replace with your EmailJS service ID, template ID, and public key
-      const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID || 'your_service_id';
-      const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID || 'your_template_id';
-      const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY || 'your_public_key';
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        }),
+      });
 
-      const templateParams = {
-        from_name: formData.name || 'Anonymous',
-        from_email: formData.email,
-        subject: formData.subject || 'No Subject',
-        message: formData.message,
-        to_email: 'joseph@jmhj.io'
-      };
+      const data = await response.json();
 
-      await emailjs.send(serviceId, templateId, templateParams, publicKey);
-
-      setSubmitMessage('Message sent successfully!');
-      setFormData({ name: '', email: '', subject: '', message: '' });
+      if (response.ok) {
+        setSubmitMessage('Message sent successfully!');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        setSubmitMessage(data.error || 'Failed to send message. Please try again.');
+      }
     } catch (error) {
       console.error('Email send error:', error);
       setSubmitMessage('Failed to send message. Please try again.');
