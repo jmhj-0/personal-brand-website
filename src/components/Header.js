@@ -41,6 +41,7 @@ function Header({ isLanding = false }) {
       <nav>
         <Link to="/" className="nav-link">Home</Link>
         <Link to="/projects" className="nav-link">Projects</Link>
+        <Link to="/contact" className="nav-link">Contact</Link>
       </nav>
       <div className="social-links">
         <a href="https://x.com/_jmhj" target="_blank" rel="noopener noreferrer">

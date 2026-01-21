@@ -5,6 +5,7 @@ import './App.css';
 import ScrollProgress from './components/ScrollProgress';
 import LandingPage from './components/LandingPage';
 const ProjectsPage = lazy(() => import('./components/ProjectsPage'));
+const ContactPage = lazy(() => import('./components/ContactPage'));
 
 function App() {
   const location = useLocation();
@@ -18,6 +19,7 @@ function App() {
             <Routes location={location}>
               <Route path="/" element={<LandingPage />} />
               <Route path="/projects" element={<ProjectsPage />} />
+              <Route path="/contact" element={<ContactPage />} />
             </Routes>
           </Suspense>
         </CSSTransition>
