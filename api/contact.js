@@ -21,8 +21,13 @@ export default async function handler(req, res) {
 
     const resend = new Resend(process.env.RESEND_API_KEY);
 
+    if (!process.env.RESEND_API_KEY) {
+      throw new Error('RESEND_API_KEY is not configured');
+    }
+
     const emailData = {
-      from: 'Contact Form <onboarding@resend.dev>', // Use Resend's default sender
+      from: 'Contact Form <noreply@resend.dev>', // Use Resend's verified sender
+      reply_to: email, // Allow replies to go to the contact form submitter
       to: 'joseph@jmhj.io',
       subject: subject ? `Contact Form: ${subject}` : 'Contact Form Message',
       html: `
