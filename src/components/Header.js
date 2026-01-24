@@ -62,7 +62,7 @@ function Header({ isLanding = false }) {
         <a href="https://steamcommunity.com/id/jmhj" target="_blank" rel="noopener noreferrer">
           <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@v9/icons/steam.svg" alt="Steam" />
         </a>
-        <a href="https://github.com/jmhj-0" target="_blank" rel="noopener noreferrer">
+        <a href="https://jmhj.dev" target="_blank" rel="noopener noreferrer">
           <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons@v9/icons/github.svg" alt="GitHub" />
         </a>
       </div>
