@@ -2,3 +2,4 @@
 .env.local
 cleanup-checklist.md
 SQL_PLAYGROUND_IMPLEMENTATION_PLAN.md
+node_modules/
